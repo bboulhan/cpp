@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:47:56 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/08 00:09:25 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:36:13 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ class Contact{
 
 class PhoneBook{
 	private:
-		static int	index;
+
 	public:
+		int	index;
 		Contact Contacts[8];
 };
 
 
 int		check_command(std::string s);
 void	stock_input(std::string &data, std::string s, int *j);
-
+void	display_info(Contact contact);
+int		search_input(std::string in);
 #endif

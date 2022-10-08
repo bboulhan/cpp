@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:47:04 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/08 01:52:24 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:45:14 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ADD(PhoneBook &book)
 			stock_input(book.Contacts[i].dakest_secret, "darkest secret : ", &j);
 	}
 	book.Contacts[i].id = i + 1;
+	book.index = i + 1;
 	i++;
 }
 
@@ -51,35 +52,32 @@ void	display_column(std::string str)
 	if ((int)str.length() >= 10)
 		std::cout << ".";
 	std::cout << " |";
-	
-	//std::cout << "  ---------- | ---------- | ---------- | ---------- |" << std::endl;
 }
-
 
 void	display_contact(Contact contact)
 {
 	std::string index;
 
 	index = std::to_string(contact.id);
-	std::cout << "  ----------   ----------   ----------   ----------  " << std::endl;
-	std::cout << "|      index | first name |  last name |   nickname |" << std::endl;
-	std::cout << "  ----------   ----------   ----------   ----------  " << std::endl;
 	std::cout << "|";
-	display_column(index);
 	display_column(contact.firstName);
 	display_column(contact.lastName);
 	display_column(contact.nickName);
+	display_column(index);
 	std::cout << "\n" << "  ----------   ----------   ----------   ----------  " << std::endl;
 }
 
-int	search_input(std::string in)
+void	display_book(PhoneBook book)
 {
-	int n;
-
-	n = stoi(in);
-	if (n >= 0 && n < 9)
-		return (n);
-	return (-1);
+	int i = 0;
+	std::cout << "  ----------   ----------   ----------   ----------  " << std::endl;
+	std::cout << "|      index | first name |  last name |   nickname |" << std::endl;
+	while (i < book.index)
+	{
+		std::cout << "  ----------   ----------   ----------   ----------  " << std::endl;
+		display_contact(book.Contacts[i++]);
+	}
+	std::cout << "  ----------   ----------   ----------   ----------  " << std::endl;
 }
 
 
@@ -89,6 +87,7 @@ void	SEARCH(PhoneBook &book)
 
 	while (1)
 	{
+		display_book(book);
 		std::cout << "Enter the index of the contact you want to display: ";
 		getline(std::cin, input);
 		if (input.length() == 0 && !std::cin.eof())
@@ -98,7 +97,7 @@ void	SEARCH(PhoneBook &book)
 		if (search_input(input) == 0)
 			return ;
 		else if (search_input(input) != -1)
-			display_contact(book.Contacts[search_input(input) - 1]);
+			display_info(book.Contacts[search_input(input) - 1]);
 		else
 			std::cout << "Invalid index" << std::endl;
 	}
@@ -109,6 +108,7 @@ int main()
 	Contact     person;
 	PhoneBook	book;
 	std::string	s;
+	
 	
 	while (1)
 	{
@@ -129,3 +129,4 @@ int main()
 	}
 	
 }
+
