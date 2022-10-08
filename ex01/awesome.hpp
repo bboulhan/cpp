@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:47:56 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/06 12:46:49 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/08 00:09:25 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AWESOME_HPP
 
 #include <iostream>
+
 
 class Contact{
 	private:
@@ -24,7 +25,9 @@ class Contact{
 		std::string nickName;
 		std::string phoneNumber;
 		std::string dakest_secret;
+		int	id;
 	Contact(){
+
 	};
 };
 
@@ -36,6 +39,7 @@ class PhoneBook{
 };
 
 
-int	check_command(std::string s);
+int		check_command(std::string s);
+void	stock_input(std::string &data, std::string s, int *j);
 
 #endif
