@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/04 18:44:51 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/08 17:45:37 by bboulhan         ###   ########.fr        #
+#    Created: 2022/10/18 20:17:45 by bboulhan          #+#    #+#              #
+#    Updated: 2022/10/19 15:46:02 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  Awesome
+NAME =  Zombie
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 CC = c++
 
-FILES = main.cpp utils.cpp \
+FILES = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp \
 
 OBJS = $(FILES:.cpp=.o)
 

@@ -1,47 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   awesome.hpp                                        :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 18:47:56 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/08 18:36:13 by bboulhan         ###   ########.fr       */
+/*   Created: 2022/10/18 15:39:41 by bboulhan          #+#    #+#             */
+/*   Updated: 2022/10/18 18:24:41 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWESOME_HPP
-# define AWESOME_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <iostream>
-
-
-class Contact{
-	private:
-
-	public:
-		std::string firstName;
-		std::string lastName;
-		std::string nickName;
-		std::string phoneNumber;
-		std::string dakest_secret;
-		int	id;
-	Contact(){
-
-	};
-};
+# include <iostream>
+# include "Contact.hpp"
 
 class PhoneBook{
 	private:
-
-	public:
 		int	index;
 		Contact Contacts[8];
+    public:
+        int empty();
+        int check_command(std::string s);
+        void ADD();
+        void SEARCH();
+        void display_book();
+        int search_input(std::string input);
 };
 
-
-int		check_command(std::string s);
-void	stock_input(std::string &data, std::string s, int *j);
-void	display_info(Contact contact);
-int		search_input(std::string in);
 #endif
