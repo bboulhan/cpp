@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   file.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 18:33:46 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 12:49:14 by bboulhan         ###   ########.fr       */
+/*   Created: 2022/10/20 11:04:27 by bboulhan          #+#    #+#             */
+/*   Updated: 2022/10/20 19:16:57 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef FILE_HPP
+# define FILE_HPP
 
 #include <iostream>
+#include <fstream>
 
-class   Weapon{
+class Files{
     private:
-        std::string type;
+        std::string filename;
+        std::string s1;
+        std::string s2;
+        
     public:
-        Weapon(std::string type);
-        ~Weapon();
-        std::string getType();
-        void setType(std::string type);
+        Files(std::string filename, std::string s1, std::string s2);
+        ~Files();
+        void setFile(std::string filename);
+        std::string getFile();
+        void Replace();
+        void Error();
 };
+
+
 
 #endif

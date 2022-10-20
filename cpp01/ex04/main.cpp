@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 19:17:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 13:01:56 by bboulhan         ###   ########.fr       */
+/*   Created: 2022/10/20 10:55:30 by bboulhan          #+#    #+#             */
+/*   Updated: 2022/10/20 19:16:40 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "File.hpp"
 
-HumanB::HumanB(std::string name)
+int main(int ac, char **av)
 {
-    this->name = name;
-    this->weapon = NULL;
-}
-
-HumanB::~HumanB()
-{
-}
-
-void    HumanB::attack()
-{
-    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-}
-
-void    HumanB::setWeapon(Weapon &weapon)
-{
-    this->weapon = &weapon;
-}
-
-Weapon *HumanB::getWeapon()
-{
-    return(this->weapon);
+    if (ac != 4)
+    {    
+        std::cout << "Parametres Error" << std::endl;
+        exit(0);
+    }
+    std::string name = av[1];
+    std::string content = av[2];
+    std::string replacement = av[3];
+    Files file = Files(name, content, replacement);
+    file.Replace();
+    
+    
 }
