@@ -5,30 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 18:30:14 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 21:47:15 by bboulhan         ###   ########.fr       */
+/*   Created: 2022/10/22 04:38:25 by bboulhan          #+#    #+#             */
+/*   Updated: 2022/10/22 18:11:54 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "HumanA.hpp"
-#include "HumanB.cpp"
+#include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    // {
-    //     Weapon club = Weapon("crude spiked club");
-    //     HumanA bob("Bob", club);
-    //     bob.attack();
-    //     club.setType("some other type of club");
-    //     bob.attack();
-    // }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
-    return 0;
+    if (ac != 2)
+        std::cout << "Parametre Error" << std::endl;
+    Harl ibra;
+    ibra.complain(av[1]);
 }

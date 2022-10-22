@@ -6,12 +6,13 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:45:02 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 13:02:47 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:48:45 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANB_HPP
 # define HUMANB_HPP
+
 
 #include <iostream>
 #include "Weapon.hpp"

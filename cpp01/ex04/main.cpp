@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:55:30 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 19:16:40 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:59:11 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int main(int ac, char **av)
     std::string replacement = av[3];
     Files file = Files(name, content, replacement);
     file.Replace();
-    
     
 }

@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:05:39 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 19:29:57 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:59:00 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Files::Files(std::string filename, std::string s1, std::string s2)
 
 Files::~Files()
 {
-	
 }
 
 void    Files::setFile(std::string filename)
@@ -44,24 +43,22 @@ void Files::Replace()
 	std::size_t i = 0;
 	
 	oldFile.open(this->filename);
-	std::getline(oldFile, tmp);
-	while (!tmp.empty())
+	if (!oldFile.is_open())
+		this->Error(2);
+	while (!oldFile.eof())
 	{	
+		std::getline(oldFile, tmp, '\0');
 		data += tmp;
-		data += '\n';
-		std::getline(oldFile, tmp);
 	}
-	// if (data[data.length() - 1] == '\n')
-	// 	data[data.length() - 1] = 0;
 	
 	std::size_t j = data.rfind(s1);
 	if (j > data.length())
-		this->Error();
+		this->Error(1);
 	while (i <= j)
 	{
 		found = data.find(s1, i);
 		if (found > data.length())
-			this->Error();
+			this->Error(1);
 		data.erase(found, this->s1.length());
 		data.insert(found, this->s2);
 		i = found + 1;
@@ -74,9 +71,12 @@ void Files::Replace()
 	newFile.close();
 }
 
-void	Files::Error()
+void	Files::Error(int i)
 {
-	std::cout << "string s2 not found in " << this->filename << std::endl;
+	if (i == 1)
+		std::cout << "string s2 not found in " << this->filename << std::endl;
+	else if (i == 2)
+		std::cout << "the file is empty or is not exist" << std::endl;	
 	exit(0);
 }
 

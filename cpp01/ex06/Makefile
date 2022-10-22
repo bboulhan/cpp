@@ -5,25 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/19 17:51:29 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/21 13:59:32 by bboulhan         ###   ########.fr        #
+#    Created: 2022/10/22 04:38:20 by bboulhan          #+#    #+#              #
+#    Updated: 2022/10/22 17:57:23 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  main
+NAME =  harlFilter
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 CC = c++
 
-FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp \
+FILES = main.cpp Harl.cpp \
+
+INC = Harl.hpp \
 
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
-
-INC = HumanA.hpp HumanB.hpp Weapon.hpp \
 
 all : $(NAME)
 
