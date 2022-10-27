@@ -7,25 +7,23 @@ class test{
 		std::string *str;
 	public:
 		test(std::string str, int i){
-			std::cout << "constructer\n";
+			std::cout << "constructer called\n";
 			this->str = new std::string(str);
 			this->i = i;
 		}
 		~test(){
 			delete str;
+			std::cout << i << " descontructer called\n";
 		}
 		test(const test &t1)
 		{
-			std::cout << "copy constructer\n";
-			this->i = t1.i;
-			this->str = new std::string;
-			memcpy(this->str, t1.str, t1.str->size());
+			std::cout << i <<" copy constructer called \n";
+			*this = t1;
 		}
 		void operator= (const test &t1)
 		{
-			std::cout << "operator activated\n";
+			std::cout << "operator called\n";
 			this->i = t1.i;
-			delete this->str;
 			this->str = new std::string;
 			memcpy(this->str, t1.str, t1.str->size());
 		}
@@ -56,11 +54,15 @@ class test{
 int main()
 {
 	test xx("ibra", 21);
-	test ab("hello", 24);
-	
-	std::cout << (xx > ab);
+	//test ab("hello", 24);
+	test cc(xx);
+	//cc = ab;
+
+
+	//std::cout << (xx > ab);
 	//std::cout << max(xx.getint(), ab.getint());
-	//std::cout << xx.getint();
+	//std::cout << cc.getint() << "\n";
+	//std::cout << cc.getint()<< "\n";
 	//std::cout << ab.getstr() << "\t" << ab.getint() << std::endl;
 	
 }
