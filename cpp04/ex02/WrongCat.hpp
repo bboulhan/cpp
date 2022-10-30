@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:22:06 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 10:45:26 by bboulhan         ###   ########.fr       */
+/*   Created: 2022/10/28 18:15:54 by bboulhan          #+#    #+#             */
+/*   Updated: 2022/10/28 18:16:50 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WrongCat_HPP
+# define WrongCat_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-
-class Dog : public Animal{
-    private:
-        Brain *brain;
+class WrongCat : public WrongAnimal{
     public:
-        Dog();
-        Dog(const Dog &copy);
-        virtual ~Dog();
-        Dog &operator=(const Dog &op);
+        WrongCat();
+        WrongCat(const WrongCat &copy);
+        ~WrongCat();
+        WrongCat &operator=(const WrongCat&op);
         std::string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
 };
+
 
 
 #endif

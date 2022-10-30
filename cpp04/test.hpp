@@ -1,5 +1,7 @@
+#ifndef TEST_HPP
+# define TEST_HPP
+
 #include <iostream>
-#include <string.h>
 
 class inhert{
     private:
@@ -15,7 +17,6 @@ class inhert{
 			this->str = op.str;
 			return *this;	
 		}
-		virtual void nothing() = 0;
 		virtual std::string getstr(){
 			return(*this->str);
 		}
@@ -41,26 +42,11 @@ class test : public inhert{
 		virtual ~test(){
 			delete str;
 		}
-		void nothing(){
-			std::cout << "say hey\n";
-		};
 		virtual std::string getstr()
 		{
 			return (*this->str);
 		}
 };
 
-int main()
-{
-	test ab;
-	inhert **xx = new inhert*();
-	//inhert yy;
-	inhert *y;
-	y = *xx;
-	//std::cout << yy.getstr() << std::endl;
-	std::cout << *xx << "\n";
-	std::cout << y->getstr() << std::endl;
-	std::cout << ab.getstr() << std::endl;
 
-
-}
+#endif 

@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:33:08 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/28 17:29:39 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/10/29 10:44:59 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal {
 	public:
 		Animal();
 		Animal(const Animal &copy);
-		~Animal();
+		virtual ~Animal();
 		Animal &operator=(const Animal &op);
 		virtual void makeSound() const;
 		std::string getType() const;
