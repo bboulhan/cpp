@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "exception": "cpp",
+        "__debug": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "stdexcept": "cpp",
+        "typeinfo": "cpp",
+        "vector": "cpp"
+    }
+}
