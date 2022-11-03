@@ -27,15 +27,19 @@ class test //: public inhert
 		std::string *str;
 	public:
 		test(){
-			this->str = new std::string("unknown");
+			// this->str = new std::string("unknown");
 			//str = "unknown";
+			this->str = new std::string[3];
+			str[0] = "hello";
+			str[1] = "ibra";
+			str[2] = "gomez";
 		}
-		test(std::string str)
-		{
-			this->str = new std::string;
-			this->str = &str;
+		// test(std::string str)
+		// {
+		// 	this->str = new std::string;
+		// 	this->str = &str;
 			
-		}
+		// }
 		test &operator=(const test &op){
 			this->str = op.str;
 			return *this;
@@ -44,24 +48,27 @@ class test //: public inhert
 			*this = copy;
 		}
 		virtual ~test(){
-			//delete str;
+			delete []str;
 		}
 		void nothing(){
 			std::cout << "say hey\n";
 		};
-		virtual std::string &getstr()
+		virtual std::string *getstr()
 		{
-			return (*this->str);
+			return (this->str);
 		}
 };
 
 int main()
 {	
-	test ab("ibra");
-	test *xx = &ab;
+	test ab;
 
-	std::cout << ab.getstr() << "\t" << &ab  << "\t" << &ab.getstr() << std::endl;
-	std::cout << xx->getstr() << "\t" << xx  << "\t" << &xx->getstr() << std::endl;
+	std::cout << ab.getstr()[0] << std::endl;
+	std::cout << ab.getstr()[1] << std::endl;
+	
+
+	// std::cout << ab.getstr() << "\t" << &ab  << "\t" << &ab.getstr() << std::endl;
+	// std::cout << xx->getstr() << "\t" << xx  << "\t" << &xx->getstr() << std::endl;
 
 
 

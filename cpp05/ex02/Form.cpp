@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:53:30 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/01 18:31:36 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:15:36 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,16 @@ void Form::beSigned(const Bureaucrat &br){
 
 const bool Form::getSign() const{
 	return (sign);
+}
+
+const char* Form::gradeHigh::what() const throw(){
+    return ("GradeTooHighException");   
+}
+
+const char* Form::gradeLow::what() const throw(){
+	return ("GradeTooLowException");
+}
+
+const char* Form::notSigned::what() const throw(){
+	return "Bureaucrat is not signed";
 }

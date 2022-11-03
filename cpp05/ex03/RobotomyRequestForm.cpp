@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:27:39 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:53:57 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:54:19 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy){
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat &exec) const{
-
 	if (this->getSign() == false || exec.getGrade() > this->getGradeExecute())
-		throw ("that robotomy failed");
+	{	
+		std::cout << "that robotomy failed" << std::endl;
+		return;
+	}
 	std::cout << "glin glin glin glin" << std::endl;
 	std::cout << target << " has been robotomized successfully 50% of the time" << std::endl;
 }

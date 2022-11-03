@@ -17,16 +17,13 @@ int main()
         char *s;
         // char c = 0;
         int y = -5;
-        
-        // c = y;
-        s = new char[y];
-        
-        //s = (char *)malloc(-5);
+		if (y < 0)
+			throw("negative");
         //std::cout << c << "\n";
     }
-    catch(const std::exception& e)
+    catch(const char *s)
     {
-        std::cout << e.what() << '\n';
+        std::cout << s << '\n';
     }
     
 }

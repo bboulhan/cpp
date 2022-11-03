@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:39:48 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/01 18:24:55 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:56:39 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,17 @@ void Bureaucrat::signForm(const Form &fm) const{
 	else
 	{
 		std::cout << this->name << " couldn't sign " << fm.getName() << " because " << this->getGrade() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const Form &form){
+	try
+	{
+		form.execute(*this);
+		std::cout << this->name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception &a)
+	{
+		std::cout << "cannot execute the form cause the Bureaucrat grade is to low than the requirement" << std::endl;
 	}
 }

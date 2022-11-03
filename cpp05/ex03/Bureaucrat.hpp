@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:39:51 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:23:54 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:03:59 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ class Bureaucrat {
         void gradeUp();
         void gradeDown();
         void signForm(const Form &fm) const;
-		void executeForm(const Form &form);
 };
 
 std::ostream& operator<<(std::ostream &stream, const Bureaucrat &op);

@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:45:38 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/01 18:31:23 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:16:54 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,10 @@ class Form {
 		const int gradeToExecute;
 	public:
 		class gradeHigh : public std::exception{
-            virtual const char* what() const throw(){
-                return ("GradeTooHighException");   
-            }
+            virtual const char* what() const throw();
         };
         class gradeLow : public std::exception{
-            virtual const char* what() const throw(){
-                return ("GradeTooLowException");
-            }
+            virtual const char* what() const throw();
         };
 		Form();
 		Form(std::string name, int grade1, int grade2);

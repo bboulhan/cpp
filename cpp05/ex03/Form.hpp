@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:45:38 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:12:59 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:27:49 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,19 @@ class Form {
 		const int gradeToExecute;
 	public:
 		class gradeHigh : public std::exception{
-            virtual const char* what() const throw();
+            virtual const char* what() const throw(){
+                return ("GradeTooHighException");   
+            }
         };
         class gradeLow : public std::exception{
-            virtual const char* what() const throw();
+            virtual const char* what() const throw(){
+                return ("GradeTooLowException");
+            }
         };
 		class notSigned : public std::exception{
-			virtual const char* what() const throw();
+			virtual const char* what() const throw(){
+				return "Bureaucrat is not signed";
+			}
 		};
 		Form();
 		Form(std::string name, int grade1, int grade2);
