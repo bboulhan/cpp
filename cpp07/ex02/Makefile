@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:15:20 by bboulhan          #+#    #+#              #
-#    Updated: 2022/11/05 16:35:13 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/07 10:44:43 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 CC = c++
 
-FILES = main.cpp Array.tpp\
+FILES = main.cpp \
 
 OBJS = $(FILES:.cpp=.o)
 
