@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:17:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 21:51:03 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:34:00 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ HumanB::~HumanB()
 
 void    HumanB::attack()
 {
-    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+	if (this->weapon != nullptr)
+   		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }
 
 void    HumanB::setWeapon(Weapon &weapon)
@@ -32,7 +33,7 @@ void    HumanB::setWeapon(Weapon &weapon)
     this->weapon = &weapon;
 }
 
-Weapon *HumanB::getWeapon()
+Weapon *HumanB::getWeapon() const
 {
     return(this->weapon);
 }

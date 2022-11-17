@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brahim <brahim@student.42.fr>              +#+  +:+       +#+         #
+#    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 12:32:02 by brahim            #+#    #+#              #
-#    Updated: 2022/10/26 12:32:51 by brahim           ###   ########.fr        #
+#    Updated: 2022/11/11 11:28:35 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FILES = main.cpp ClapTrap.cpp \
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 INC = ClapTrap.hpp \
 

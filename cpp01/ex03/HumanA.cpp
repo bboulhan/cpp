@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:57:20 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 13:04:18 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:40:33 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void    HumanA::setWeapon(Weapon &weapon)
     this->weapon = weapon;
 }
 
-Weapon *HumanA::getWeapon()
+Weapon *HumanA::getWeapon() const
 {
     return(&this->weapon);
 }

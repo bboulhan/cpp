@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 12:32:02 by brahim            #+#    #+#              #
-#    Updated: 2022/10/27 18:58:08 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/11 11:47:39 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FILES = main.cpp ClapTrap.cpp ScavTrap.cpp \
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 INC = ClapTrap.hpp ScavTrap.hpp \
 

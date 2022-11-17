@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:16:21 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/04 17:50:06 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/15 10:51:26 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ class Convert{
 		double *d;
 	public:
 		Convert();
-		Convert(std::string str);
-		Convert(const Convert &copy);			
+		void check_type();
+		Convert(std::string str);		
 		~Convert();
-		Convert &operator=(const Convert &op);
 		int *to_int();
 		float *to_float();
 		char to_char();

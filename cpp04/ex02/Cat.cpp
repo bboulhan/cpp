@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:52:47 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 14:54:38 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:57:27 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat()
 Cat::Cat(const Cat &copy)
 {
     this->brain = new Brain(*copy.brain);
+	this->type = type;
     std::cout << "Cat copy constructer called" << std::endl;
 }
 

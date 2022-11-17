@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:22:06 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 10:45:26 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:39:06 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-
 
 class Dog : public Animal{
     private:

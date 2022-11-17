@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:48:46 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 15:03:22 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:55:45 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Brain::Brain()
 Brain::Brain(const Brain &copy)
 {
 	std::cout << "Brain copy constructer called" << std::endl;
+	*this = copy;
 }
 
 Brain::~Brain()
@@ -30,7 +31,8 @@ Brain::~Brain()
 Brain &Brain::operator=(const Brain &op)
 {
 	std::cout << "Brain Copy assignment operator called" <<  std::endl;
-    return (*this);
+    memcpy(this, &op, sizeof(op));
+	return (*this);
 }
 
 std::string *Brain::getIdeas()

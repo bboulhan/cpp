@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:39:48 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:17:44 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:08:43 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Bureaucrat::Bureaucrat() : name("unknown"), grade(150)
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) {
 	if (grade < 1)
-		throw (gradeHigh());
+		throw (GradeTooHighException());
 	else if (grade > 150)
-		throw (gradeLow());
+		throw (GradeTooLowException());
 	this->grade = grade;
 }
 
@@ -29,8 +29,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &op) {
 	return (*this);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy){
-	*this = copy;
+Bureaucrat::Bureaucrat(const Bureaucrat &copy): name(copy.name), grade(copy.grade)
+{
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -45,32 +45,32 @@ int Bureaucrat::getGrade() const{
 	return (this->grade);
 }
 
+void Bureaucrat::setGrade(int grade){
+	this->grade = grade;
+}
+
 void Bureaucrat::gradeUp(){
+	if (this->grade == 1)
+		throw (GradeTooHighException());
 	this->grade--;
-	if (this->grade < 0)
-		throw (gradeHigh());
-	if (this->grade > 150)
-		throw (gradeLow());
 }
 
 void Bureaucrat::gradeDown(){
+	if (this->grade == 150)
+		throw (GradeTooLowException());
 	this->grade++;
-	if (this->grade < 0)
-		throw (gradeHigh());
-	if (this->grade > 150)
-		throw (gradeLow());
 }
 
 std::ostream& operator<<(std::ostream &stream, const Bureaucrat &op)
 {
-	stream << op.getName() << " bureaucrat grade " << op.getGrade() << std::endl;
+	stream << op.getName() << " bureaucrat grade " << op.getGrade();
 	return (stream);
 }
 
-const char* Form::gradeHigh::what() const throw(){
-    return ("GradeTooHighException");   
+const char* Bureaucrat::GradeTooHighException::what() const throw(){
+    return ("Grade Too High");
 }
 
-const char* Form::gradeLow::what() const throw(){
-	return ("GradeTooLowException");
+const char* Bureaucrat::GradeTooLowException::what() const throw(){
+	return ("Grade Too Low");
 }

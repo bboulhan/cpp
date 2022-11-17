@@ -23,20 +23,17 @@ class A {
 
 int main(int ac, char **av)
 {
-	A ab("ibra");
+	// uintptr_t j;
+	// std::string *str = new std::string ("hhhhhhhh");
 
-	srand((unsigned)time(0)); 
-    int i;
-    i = (rand()%3); 
-    std::cout << i << "\n"; 
+	// j = reinterpret_cast<uintptr_t>(str);
+	// std::cout << std::hex << j << "\t" << str << "\n";
+	float *f = new float(56.96);
+	int *i = reinterpret_cast<int*>(f);
+	float *d = reinterpret_cast<float*>(i);
 
-	// try{
-	// 	int i = stoi(*ab.getA());
-	// }
-	// catch(const std::exception &e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-
+	std::cout << *i << "\n";
+	std::cout << *d << "\n";
 
 
 	//std::cout << *ab.getA();

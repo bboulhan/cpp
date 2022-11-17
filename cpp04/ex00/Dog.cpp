@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:23:16 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/28 17:37:48 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:03:45 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@ Dog::Dog(const Dog &copy)
 Dog::~Dog()
 {
 	std::cout << "Dog destructer called" << std::endl;
-}
-
-Dog& Dog::operator=(const Dog&op)
-{
-	std::cout << "Dog Copy assignment operator called" <<  std::endl;
-    this->type = op.type;
-    return (*this);
 }
 
 std::string Dog::getType() const

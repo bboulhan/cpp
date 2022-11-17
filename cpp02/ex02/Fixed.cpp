@@ -6,22 +6,19 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:24:01 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/25 17:32:37 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:17:10 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixedPoint(0)
-{
+Fixed::Fixed() : fixedPoint(0){
 }
 
-Fixed::~Fixed()
-{
+Fixed::~Fixed(){
 }
 
-Fixed::Fixed(const Fixed &copy)
-{
+Fixed::Fixed(const Fixed &copy){
 	this->operator=(copy);
 }
 
@@ -35,9 +32,10 @@ Fixed::Fixed(const float f)
 	this->fixedPoint = (float)roundf(f * (1 << this->bits));
 }
 
-void Fixed::operator=(const Fixed &op)
+Fixed& Fixed::operator=(const Fixed &op)
 {
 	this->fixedPoint = op.getRawBits();
+	return *this;
 }
 
 int Fixed::getRawBits() const
@@ -156,31 +154,30 @@ Fixed Fixed::operator--(int)
 	return tmp;
 }
 
-// static Fixed Fixed::min(const Fixed &op1, const Fixed &op2)
-// {
-// 	if (op1.fixedPoint < op2.fixedPoint)
-// 		return (op1);
-// 	return (op2);
-// }
+const Fixed& Fixed::min(const Fixed &op1, const Fixed &op2)
+{
+	if (op1 < op2)
+		return (op1);
+	return (op2);
+}
 
-// static Fixed& Fixed::min(Fixed &op1, Fixed &op2)
-// {
-// 	if (op1.fixedPoint < op2.fixedPoint)
-// 		return (op1);
-// 	return (op2);
-// }
+Fixed& Fixed::min(Fixed &op1, Fixed &op2)
+{
+	if (op1 < op2)
+		return (op1);
+	return (op2);
+}
 
-// static Fixed Fixed::max(const Fixed &op1, const Fixed &op2)
-// {
-// 	if (op1.fixedPoint > op2.fixedPoint)
-// 		return (op1);
-// 	return (op2);
-// }
+const Fixed& Fixed::max(const Fixed &op1, const Fixed &op2)
+{
+	if (op1 > op2)
+		return (op1);
+	return (op2);
+}
 
-// static Fixed& Fixed::max(Fixed &op1, Fixed &op2)
-// {
-// 	if (op1.fixedPoint > op2.fixedPoint)
-// 		return (op1);
-// 	return (op2);
-// }
-
+Fixed& Fixed::max(Fixed &op1, Fixed &op2)
+{
+	if (op1 > op2)
+		return (op1);
+	return (op2);
+}

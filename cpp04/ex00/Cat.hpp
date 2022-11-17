@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:35:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 15:41:02 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:04:01 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Cat : public Animal{
         Cat();
         Cat(const Cat &copy);
         virtual ~Cat();
-        Cat &operator=(const Cat&op);
         std::string getType() const;
         virtual void makeSound() const;
 };

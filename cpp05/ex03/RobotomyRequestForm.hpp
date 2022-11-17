@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:11:37 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/02 16:23:43 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:14:57 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public Form{
 		~RobotomyRequestForm();
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &op);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
-		virtual void execute(const Bureaucrat &exec) const;
+		virtual void execute(Bureaucrat const &executor)const;
 };
 
 

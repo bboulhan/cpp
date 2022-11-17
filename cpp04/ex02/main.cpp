@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:24:21 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 14:58:55 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:51:54 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ int main()
     delete i;
    
     int z = 0;
-    Animal **a = new Animal*[4];
+	Animal *a[4];
+	
     while (z < 2)
         a[z++] = new Dog();
     while (z < 4)
         a[z++] = new Cat();
+   
     z = 0;
     while (z < 4)
         delete a[z++];
-    delete [] a;
     
     Dog x;
     Dog k;
@@ -39,7 +40,7 @@ int main()
 
     k = x;
     p = y;
-
+	
     return 0;
 
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.cpp                                           :+:      :+:    :+:   */
+/*   File.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:05:39 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/21 11:59:00 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:17:46 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    Files::setFile(std::string filename)
 	this->filename = filename;
 }
 
-std::string Files::getFile()
+std::string Files::getFile() const
 {
 	return (this->filename);
 }

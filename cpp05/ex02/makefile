@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 17:35:56 by bboulhan          #+#    #+#              #
-#    Updated: 2022/11/02 18:13:30 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/12 13:14:44 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,13 @@ CC = c++
 FILES = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp \
 
+INC = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
+	  ShrubberyCreationForm.hpp RobotomyRequestForm.hpp \
+
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
-INC = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
-	  ShrubberyCreationForm.hpp RobotomyRequestForm.hpp \
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:33:46 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 12:49:14 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:09:57 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Weapon{
     public:
         Weapon(std::string type);
         ~Weapon();
-        std::string getType();
+        std::string getType() const;
         void setType(std::string type);
 };
 

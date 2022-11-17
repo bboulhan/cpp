@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:36:06 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/18 18:24:44 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:21:22 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class Contact{
         void display_contact();
         void stock_input(std::string s, int *j, int id);
 };
-
+      
 #endif

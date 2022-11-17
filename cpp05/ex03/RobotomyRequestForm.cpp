@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:27:39 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:54:19 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 13:13:12 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,19 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy){
-	*this = copy;
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): Form(copy.getName(), copy.getGradeSign(), copy.getGradeExecute()) {
+	this->target = copy.target;
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &exec) const{
-	if (this->getSign() == false || exec.getGrade() > this->getGradeExecute())
-	{	
-		std::cout << "that robotomy failed" << std::endl;
-		return;
+void RobotomyRequestForm::execute(const Bureaucrat &executor)const {
+	try
+	{
+		if (this->getSign() == false || executor.getGrade() > this->getGradeExecute())
+			throw(GradeTooLowException());
+		std::cout << "glin glin glin glin" << std::endl;
+		std::cout << target << " has been robotomized successfully 50% of the time" << std::endl;
 	}
-	std::cout << "glin glin glin glin" << std::endl;
-	std::cout << target << " has been robotomized successfully 50% of the time" << std::endl;
+	catch(const std::exception &e){
+		std::cout << "that robotomy failed" << std::endl;
+	}
 }

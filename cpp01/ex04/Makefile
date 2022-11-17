@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/20 10:55:14 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/20 13:09:05 by bboulhan         ###   ########.fr        #
+#    Created: 2022/11/07 18:19:30 by bboulhan          #+#    #+#              #
+#    Updated: 2022/11/07 18:19:32 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  main
+NAME = File
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -18,14 +18,16 @@ CC = c++
 
 FILES = main.cpp File.cpp \
 
+INC = File.hpp \
+
 OBJS = $(FILES:.cpp=.o)
 
-%.o : %.cpp
+%.o : %.cpp $(INC)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(INC)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean : 

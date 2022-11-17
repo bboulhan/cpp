@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:42:46 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/05 14:18:17 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:02:57 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 template<typename type>
 
-void swap(type &a, type &b)
+void swap(type &a, type b)
 {
 	type t;
 	t = a;
 	a = b;
 	b = t;
 }
+
 
 template<typename type>
 

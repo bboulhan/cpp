@@ -6,6 +6,9 @@ class test{
 		int i;
 		std::string *str;
 	public:
+		test() : i(0){
+			str = new std::string("unknown"); 
+		}
 		test(std::string str, int i){
 			std::cout << "constructer called\n";
 			this->str = new std::string(str);
@@ -17,15 +20,17 @@ class test{
 		}
 		test(const test &t1)
 		{
-			std::cout << i <<" copy constructer called \n";
+			std::cout << "copy constructer called \n";
 			*this = t1;
 		}
 		void operator= (const test &t1)
 		{
 			std::cout << "operator called\n";
+			// memcpy(this, &t1, sizeof(t1));
 			this->i = t1.i;
 			this->str = new std::string;
 			memcpy(this->str, t1.str, t1.str->size());
+			//return (*this);
 		}
 		std::string getstr()
 		{
@@ -53,9 +58,16 @@ class test{
 
 int main()
 {
-	test xx("ibra", 21);
-	//test ab("hello", 24);
-	test cc(xx);
+
+	float f = (float)roundf(4.406 * (1 << 8));
+	std::cout << f << std::endl;
+
+	// test xx("ibra", 21);
+	// //test ab("hello", 24);
+	// test cc(xx);
+	// test bb;
+	// test ll;
+	// ll = cc;
 	//cc = ab;
 
 

@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:50:14 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/02 18:27:43 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:15:06 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ShrubberyCreationForm : public Form{
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &op);
-		virtual void execute(const Bureaucrat &exec) const;
+		virtual void execute(Bureaucrat const &executor)const;
 };
 
 

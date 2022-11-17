@@ -52,7 +52,11 @@
 		"tuple": "cpp",
 		"type_traits": "cpp",
 		"utility": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"__split_buffer": "cpp",
+		"deque": "cpp",
+		"iomanip": "cpp",
+		"stack": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled",
 	"C_Cpp.codeAnalysis.clangTidy.checks.disabled": [

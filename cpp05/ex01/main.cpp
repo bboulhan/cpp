@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:39:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/02 15:12:49 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 09:54:26 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,20 @@ int main()
 {
 	try
 	{
-		Bureaucrat test("ibra", 54);
-		test.gradeDown();
-		Bureaucrat test2("gomez", 150);
-		test2.gradeUp();
-		test2.gradeDown();
-		Form  ab("matrix", 55, 55);
-		Form cc("hello", 100, 102);
-		ab.beSigned(test);
-		test.signForm(ab);
-		cc.beSigned(test2);
-		test2.signForm(cc);
-		std::cout << ab;
-		std::cout << cc;
-		std::cout << test;
-		std::cout << test2;
+		Bureaucrat br1("Bureaucrat 1", 54);
+		Bureaucrat br2("Bureaucrat 2", 70);
+		Form form("matrix", 55, 55);
+		std::cout << br1 << std::endl;
+		std::cout << br2 << std::endl;
+		std::cout << form << std::endl;
+		br1.signForm(form);
+		form.beSigned(br1);
+		br2.signForm(form);
+		
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
 }

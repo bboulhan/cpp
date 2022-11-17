@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 14:23:43 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/25 14:23:45 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/09 18:02:02 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FILES = main.cpp Fixed.cpp \
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 INC = Fixed.hpp \
 

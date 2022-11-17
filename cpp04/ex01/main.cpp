@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:24:21 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 14:58:55 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:50:38 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 
 int main()
 {
+
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     delete j;
     delete i;
    
+   
     int z = 0;
-    Animal **a = new Animal*[4];
+	Animal *a[4];
     while (z < 2)
         a[z++] = new Dog();
     while (z < 4)
@@ -30,7 +32,6 @@ int main()
     z = 0;
     while (z < 4)
         delete a[z++];
-    delete [] a;
     
     Dog x;
     Dog k;
@@ -41,5 +42,4 @@ int main()
     p = y;
 
     return 0;
-
 }

@@ -6,12 +6,14 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:39:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 16:56:20 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 13:47:50 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
 int main()
@@ -19,33 +21,29 @@ int main()
 	try
 	{
 		Intern someRandomIntern;
-		Form* rrf;
-		rrf = someRandomIntern.makeForm("Robotomy request", "Bender");
-		std::cout << rrf->getName() << std::endl;
-		// Bureaucrat test("ibra", 14);
-		// test.gradeDown();
-		// Bureaucrat test2("gomez", 5);
-		// test2.gradeUp();
-		// test2.gradeDown();
-		// ShrubberyCreationForm ab("matrix");		
-		// RobotomyRequestForm xx("CPP");
-		// PresidentialPardonForm cc("hello");
-		// xx.beSigned(test);
-		// ab.beSigned(test);
-		// ab.execute(test);
-		// xx.execute(test);
-		// test.signForm(ab);
-		// cc.beSigned(test2);
-		// cc.execute(test2);
-		// test2.signForm(cc);
-		// std::cout << ab;
-		// std::cout << cc;
-		// std::cout << test;
-		// std::cout << test2;
+		Form* robo;
+		Form *pr;
+		Form *sh;
+		
+		robo = someRandomIntern.makeForm("robotomy request", "Bender");
+		sh = someRandomIntern.makeForm("shrubbery creation", "Bender 2");
+		pr = someRandomIntern.makeForm("presidential pardon", "Bender 3");
+		
+		Bureaucrat br1("Bureaucrat 1", 4);
+		Bureaucrat br2("Bureaucrat 2", 70);
+
+		std::cout << br1 << std::endl;
+		std::cout << br2 << std::endl;
+		br1.signForm(*pr);
+		br1.signForm(*sh);
+		br2.signForm(*robo);
+		br1.executeForm(*sh);
+		br1.executeForm(*pr);
+		br2.executeForm(*robo);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 }

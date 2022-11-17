@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:27:59 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 14:59:29 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:15:12 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Brain {
         Brain();
         Brain(const Brain &copy);
         ~Brain();
-        Brain &operator=(const Brain &op);
-        std::string *getIdeas();        
+        Brain &operator=(const Brain &op);       
 };
 
 

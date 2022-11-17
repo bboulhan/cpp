@@ -6,14 +6,13 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:44:14 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/20 13:04:12 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:40:07 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
 # define HUMANA_HPP
 
-#include <iostream>
 #include "Weapon.hpp"
 
 class HumanA{
@@ -25,7 +24,7 @@ class HumanA{
         ~HumanA(); 
         void attack();
         void setWeapon(Weapon &weapon);
-        Weapon* getWeapon(); 
+        Weapon* getWeapon() const; 
 
 };
 

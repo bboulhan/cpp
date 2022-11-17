@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:35:58 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/18 18:23:24 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:26:00 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	Contact::stock_input(std::string s, int *j, int id)
     {
         if (in[i] < 32)
         {
-            std::cout << "invalid information\n";
+            std::cout << "invalid information" << std::endl;
             return ;
         }
     }
@@ -89,6 +89,7 @@ void	Contact::display_info()
 	if (this->empty())
 	{
 		std::cout << "No contact found" << std::endl;
+		std::cout << "enter 0 if you want to go back" << std::endl;
 		return ;
 	}
 	std::cout << "first name : " << this->firstName << std::endl;

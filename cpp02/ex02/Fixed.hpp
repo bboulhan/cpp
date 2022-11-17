@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:24:11 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/25 17:32:46 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:16:34 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed {
         Fixed(const float f);
         float toFloat(void) const;
         int   toInt(void) const;
-		void  operator=(const Fixed &op);
+		Fixed& operator=(const Fixed &op);
 		~Fixed();
 		int getRawBits() const;
 		void setRawBits(int const raw);
@@ -45,34 +45,13 @@ class Fixed {
 		Fixed operator++(int);
 		Fixed &operator--();
 		Fixed operator--(int);
-		static Fixed min(const Fixed &op1, const Fixed &op2)
-		{
-			if (op1.fixedPoint < op2.fixedPoint)
-				return (op1);
-			return (op2);
-		}
-		static Fixed& min(Fixed &op1, Fixed &op2)
-		{
-			if (op1.fixedPoint < op2.fixedPoint)
-				return (op1);
-			return (op2);
-		}
-		static Fixed max(const Fixed &op1, const Fixed &op2)
-		{
-			if (op1.fixedPoint > op2.fixedPoint)
-				return (op1);
-			return (op2);
-		}
-		static Fixed& max(Fixed &op1, Fixed &op2)
-		{
-			if (op1.fixedPoint > op2.fixedPoint)
-				return (op1);
-			return (op2);
-		}
-
-
+		static const Fixed& min(const Fixed &op1, const Fixed &op2);
+		static Fixed& min(Fixed &op1, Fixed &op2);
+		static const Fixed& max(const Fixed &op1, const Fixed &op2);
+		static Fixed& max(Fixed &op1, Fixed &op2);
 
 };
+
 std::ostream& operator<<(std::ostream& stream, const Fixed &op);
 
 #endif

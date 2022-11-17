@@ -6,11 +6,11 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 17:51:29 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/21 13:59:32 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/07 16:36:57 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  main
+NAME =  Weapon
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -18,12 +18,12 @@ CC = c++
 
 FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp \
 
+INC = Weapon.hpp HumanA.hpp HumanB.hpp \
+
 OBJS = $(FILES:.cpp=.o)
 
-%.o : %.cpp
+%.o : %.cpp $(INC)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-INC = HumanA.hpp HumanB.hpp Weapon.hpp \
 
 all : $(NAME)
 

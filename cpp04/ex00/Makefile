@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 15:29:39 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/28 17:40:09 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/11 17:56:48 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ CC = c++
 
 FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp \
 
+INC = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp \
+
 OBJS = $(FILES:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
-INC = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp \
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

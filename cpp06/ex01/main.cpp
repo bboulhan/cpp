@@ -6,25 +6,11 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:02:33 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/04 18:44:34 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:07:28 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-typedef struct t_Data{
-	std::string login;
-	std::string name;
-} Data;
-
-
-uintptr_t serialize(Data* ptr){
-	return reinterpret_cast<uintptr_t>(ptr);
-}
-
-Data* deserialize(uintptr_t raw){
-	return reinterpret_cast<Data*>(raw);
-}
+#include "main.hpp"
 
 int main()
 {
@@ -37,5 +23,5 @@ int main()
 	
 	j = serialize(ptr);
 	ptr2 = deserialize(j);
-	std::cout << ptr2->login << "\t" << ptr2->name ;
+	std::cout << ptr2->login << "\t" << ptr2->name << std::endl;
 }

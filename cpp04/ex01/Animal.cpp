@@ -6,13 +6,13 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:25:09 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/28 17:38:12 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:54:18 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("human")
+Animal::Animal() : type("Animal")
 {
 	std::cout << "Animal Default constructer called" << std::endl;
 }

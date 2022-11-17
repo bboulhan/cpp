@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:23:16 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/29 14:54:31 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:58:16 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Dog::Dog()
 Dog::Dog(const Dog &copy)
 {
     this->brain = new Brain(*copy.brain);
+	this->type = copy.type;
     std::cout << "Dog copy constructer called" << std::endl;
 }
 

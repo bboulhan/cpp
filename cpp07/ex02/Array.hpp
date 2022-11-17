@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:15:36 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/07 10:54:39 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:18:19 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Array{
 		Array(const Array &copy){
 			this->n = copy.n;
 			this->elem = new T[n];
-			for(int i = 0; i < n; i++){
+			for(unsigned int i = 0; i < n; i++){
 				this->elem[i] = copy.elem[i];
 			}
 		};
@@ -44,11 +44,12 @@ class Array{
 				this->elem[i] = op.elem[i];
 			}
 		};
+		a.operator(b);
 		~Array(){ delete [] elem; };
 		T &operator[](unsigned int i) const{
 			if (i >= n)
 				throw (OutOfBounds());
-			return(elem[i]);
+			//return(elem[i]);
 		};
 		unsigned int size() const{
 			return this->n;
@@ -61,7 +62,7 @@ class Array{
 
 std::ostream &operator<<(std::ostream &stream, Array<int> &arr)
 {
-	for (int i=0; i < arr.size(); i++){
+	for (unsigned int i=0; i < arr.size(); i++){
 		stream << arr.getElem()[i] << " ";
 	}
 	return (stream);

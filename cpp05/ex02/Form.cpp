@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:53:30 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 12:15:36 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 13:12:41 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ Form::Form(std::string name, int grade1, int grade2) : name(name), gradeToSign(g
 {
 	this->sign = false;
 	if (gradeToSign < 0 || gradeToExecute < 0)
-		throw (gradeHigh());
+		throw (GradeTooHighException());
 	if (gradeToSign > 150 || gradeToExecute > 150)
-		throw(gradeLow());
+		throw(GradeTooLowException());
 }
 
 Form::~Form(){
 
 }
 
-Form::Form(const Form &copy) : gradeToSign(150), gradeToExecute(150){
+Form::Form(const Form &copy) : name(copy.name), gradeToSign(copy.gradeToSign), gradeToExecute(copy.gradeToExecute){
 	this->sign = copy.sign;
 }
 
@@ -50,37 +50,41 @@ Form &Form::operator=(const Form &op)
 	return (*this);
 }
 
-const std::string Form::getName() const{
+std::string Form::getName() const{
 	return (this->name);
 }
 
-const int Form::getGradeSign() const{
+int Form::getGradeSign() const{
 	return (this->gradeToSign);
 }
 
-const int Form::getGradeExecute() const{
+int Form::getGradeExecute() const{
 	return (this->gradeToExecute);
 }
 
-void Form::beSigned(const Bureaucrat &br){
+void Form::beSigned(Bureaucrat &br){
+	
 	if (br.getGrade() <= this->gradeToSign)
 		this->sign = true;
-	else 
-		throw (gradeLow());
+	else{
+		this->sign = false;
+		throw (GradeTooLowException());
+	}
 }
 
-const bool Form::getSign() const{
+bool Form::getSign() const{
 	return (sign);
 }
 
-const char* Form::gradeHigh::what() const throw(){
-    return ("GradeTooHighException");   
+const char* Form::GradeTooHighException::what() const throw(){
+    return ("Grade Too High");   
 }
 
-const char* Form::gradeLow::what() const throw(){
-	return ("GradeTooLowException");
+const char* Form::GradeTooLowException::what() const throw(){
+	return ("Grade Too Low");
 }
 
 const char* Form::notSigned::what() const throw(){
-	return "Bureaucrat is not signed";
+	return ("Bureaucrat is not signed");
 }
+

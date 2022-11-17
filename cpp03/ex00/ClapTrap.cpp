@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:32:45 by brahim            #+#    #+#             */
-/*   Updated: 2022/10/27 18:12:59 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/11 11:45:32 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
     std::cout << "copy constructer called" << std::endl;
 }
 
-void ClapTrap::operator=(const ClapTrap &op)
+ClapTrap &ClapTrap::operator=(const ClapTrap &op)
 {
     memcpy(this, &op, sizeof(op));
     std::cout << "Copy assignment operator called" <<  std::endl;
+	return *this;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "Destructer called" <<  std::endl;
 }
+
 void ClapTrap::attack(const std::string &target)
 {
     if (EnergyPoints <= 0)

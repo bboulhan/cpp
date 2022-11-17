@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:18:35 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 16:55:38 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 13:38:27 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,25 @@ Intern::Intern(){
 	this->table[2] = "presidential pardon";
 }
 
+Intern::Intern(const Intern &copy){
+	table = new std::string[3];
+	table[0] = copy.table[0];
+	table[1] = copy.table[1];
+	table[2] = copy.table[2];
+}
+
+Intern &Intern::operator=(const Intern &op){
+	delete [] table;
+	table = new std::string[3];
+	table[0] = op.table[0];
+	table[1] = op.table[1];
+	table[2] = op.table[2];
+	return *this;
+}
+
 int Intern::Search(std::string form){
 	int i = -1;
-	while (++i <= form.size())
+	while (++i <= (int)form.size())
 		form[i] = tolower(form[i]);
 	i = 0;
     while (form != this->table[i] && i < 3)

@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 14:05:51 by bboulhan          #+#    #+#              #
-#    Updated: 2022/11/05 14:06:08 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/16 14:42:50 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ FILES = main.cpp \
 
 OBJS = $(FILES:.cpp=.o)
 
-%.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
 INC = Whatever.hpp \
+
+%.o : %.cpp $(INC)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 

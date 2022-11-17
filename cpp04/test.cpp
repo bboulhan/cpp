@@ -52,15 +52,23 @@ class test : public inhert{
 
 int main()
 {
-	test ab;
-	inhert **xx = new inhert*();
-	//inhert yy;
-	inhert *y;
-	y = *xx;
-	//std::cout << yy.getstr() << std::endl;
-	std::cout << *xx << "\n";
-	std::cout << y->getstr() << std::endl;
-	std::cout << ab.getstr() << std::endl;
+	try{
+	//test ab;
+	//inhert **xx = new inhert*();
+	std::string *a;
+	int y = -5;
+	a = new std::string[y];
 
+	//inhert yy;
+	// inhert *y;
+	// y = *xx;
+	//std::cout << y << std::endl;
+	//std::cout << y->getstr() << "\n";
+	//std::cout << y->getstr() << std::endl;
+	//std::cout << ab.getstr() << std::endl;
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;		
+	}
 
 }

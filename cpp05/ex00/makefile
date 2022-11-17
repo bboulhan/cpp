@@ -6,7 +6,7 @@
 #    By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 17:35:56 by bboulhan          #+#    #+#              #
-#    Updated: 2022/10/31 17:36:49 by bboulhan         ###   ########.fr        #
+#    Updated: 2022/11/12 11:03:19 by bboulhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ CC = c++
 
 FILES = main.cpp Bureaucrat.cpp \
 
+INC = Bureaucrat.hpp \
+
 OBJS = $(FILES:.cpp=.o)
 
-%.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
-INC = Bureaucrat.hpp \
+%.o : %.cpp $(INC)
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

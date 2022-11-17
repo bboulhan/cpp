@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:50:10 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/10/22 04:53:14 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:22:34 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ class Harl{
 		void complain(std::string level);
 		int search(std::string level, std::string table[4]);
 };
-
 
 #endif

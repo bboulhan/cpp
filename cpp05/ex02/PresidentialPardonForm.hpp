@@ -6,7 +6,7 @@
 /*   By: bboulhan <bboulhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:24:44 by bboulhan          #+#    #+#             */
-/*   Updated: 2022/11/03 11:23:55 by bboulhan         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:14:45 by bboulhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm : public Form{
 		~PresidentialPardonForm();
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &op);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
-		virtual void execute(const Bureaucrat &exec) const;
+		virtual void execute(Bureaucrat const &executor)const;
 };
 
 #endif
